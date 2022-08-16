@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>
+          <div>Available Fields
+            <div><input id="test" type="checkbox" checked/><span>Email</span></div>
+          </div>
+              <a href="done.html" title="进入目录" target="done">publish</a>
+        </td>
+        <td><iframe name="popup" src="popup.html"></iframe></td>
+      </tr>
+    </table>
+    <script>
+      // 本来想用localStorage存储勾选状态值
+        // 发现其不能动态存储
+        var check = document.querySelector('#test');
+        check.onclick = function (){
+            check.checked ? false : true;
+            localStorage.checked = check.checked;
+            if (window.localStorage){
+              localStorage.checked = check.checked;
+              // location.href='popup.html';
+              // console.log(localStorage.checked);
+            }
+        }   
+        
+    </script>
+  </body>
+</html>

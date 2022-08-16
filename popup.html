@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup</title>
+</head>
+<body>
+    <div>
+        Simple Body
+        <div  style="display:none" id="test1"><br>
+            <input  type="text" name="Email" value="Email" >
+        </div>
+    </div>
+    <script>
+        
+        // 本来想用localStorage存储勾选状态值
+        // 发现其不能动态存储
+        document.querySelector('#test1').style.display = "inline";
+        // if(localStorage.checked == "true"){
+        //     document.querySelector('#test1').style.display = "inline";
+        // } else {
+        //     document.querySelector('#test1').style.display = "none";   
+        // }
+    </script>
+</body>
+</html>
