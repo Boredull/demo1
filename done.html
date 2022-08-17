@@ -1,16 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Done</title>
-</head>
-<script language="javascript"> 
-    window.open ('popup.html', 'newwindow', 'height=150, width=400, top=300,left=400, toolbar=yes, menubar=yes, scrollbars=yes, resizable=yes,location=yes, status=no') 
-    //写成一行 
-</script> 
-<body>
+  </head>
+  <style>
     
-</body>
+    .pop_win {
+      display: block;
+      position: absolute;
+      top: 20%;
+      left: 25%;
+      width: 50%;
+      height: 50%;
+      padding: 10px;
+      /* border: 2px solid #3b3e41; */
+      background-color: white;
+      z-index: 9999;
+      overflow: auto;
+      border-radius: 25px;
+      box-shadow: darkgrey 0px 0px 30px 5px
+    }
+  </style>
+  <!-- 可以使用  document.write  -->
+  <!-- <script language="javascript"> 
+    window.open ('popup.html', 'newwindow', 'height=150, width=400, top=300,left=400, toolbar=yes, menubar=yes, scrollbars=yes, resizable=yes,location=yes, status=no')  -->
+  <!-- 写成一行 
+</script>  -->
+<script type="text/javascript">
+    function closeWin() {
+        document.getElementById('light').style.display = 'none';
+    }
+</script>
+  <body>
+    <div id="light" class="pop_win">
+        <div>
+            <div style="text-align: center;margin-top:20px">Simple Body</div> 
+            <div id="test1" style="text-align: center;margin-top:20px"><br>
+                <input  type="text" name="Email" value="Email" >
+            </div>
+            
+        </div>
+        <button style="position: absolute;bottom: 10%;right:10%" onclick="closeWin();">YES</button>
+    </div>
+    <!-- <div id="fade" class="black_overlay"> -->
+      
+    </div>
+  </body>
 </html>

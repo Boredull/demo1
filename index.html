@@ -6,32 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Demo</title>
   </head>
+
   <body>
-    <table>
-      <tr>
-        <td>
-          <div>Available Fields
+    
+          <div id="left" class="edit">Available Fields
             <div><input id="test" type="checkbox" checked/><span>Email</span></div>
+            <a href="done.html" title="进入目录" target="done">publish</a>
           </div>
-              <a href="done.html" title="进入目录" target="done">publish</a>
-        </td>
-        <td><iframe name="popup" src="popup.html"></iframe></td>
-      </tr>
-    </table>
+              
     <script>
-      // 本来想用localStorage存储勾选状态值
-        // 发现其不能动态存储
-        var check = document.querySelector('#test');
-        check.onclick = function (){
-            check.checked ? false : true;
-            localStorage.checked = check.checked;
-            if (window.localStorage){
-              localStorage.checked = check.checked;
-              // location.href='popup.html';
-              // console.log(localStorage.checked);
-            }
-        }   
-        
+      // 通过搜索，本来想用localStorage存储勾选状态值，发现其不能动态存储，故算了
+        // var check = document.querySelector('#test');
+        // check.onclick = function (){
+        //     check.checked ? false : true;
+        //     localStorage.checked = check.checked;
+        //     if (window.localStorage){
+        //       localStorage.checked = check.checked;
+        //     }
+        // }   
     </script>
+    <div id="light" class="pop_win">
+      <div>
+          <div style="text-align: center;margin-top:20px">Simple Body
+          </div> 
+          <div id="test1" style="text-align: center;margin-top:20px"><br>
+              <input  type="text" name="Email" value="Email" >
+          </div>      
+      </div>
+      <!-- <button style="position: absolute;bottom: 10%;right:10%" onclick="closeWin();">YES</button> -->
+  </div>
   </body>
+  <style>
+    .edit {
+      display: block;
+      position: absolute;
+      top: 20%;
+      left: 5%;
+      width: 30%;
+      height: 50%;
+      padding: 10px;
+      /* border: 2px solid #3b3e41; */
+      background-color: white;
+      /* z-index: 9999; */
+      overflow: auto;
+      /* border-radius: 25px; */
+      box-shadow: darkgrey 0px 0px 30px 5px
+    }
+    .pop_win {
+      display: block;
+      position: absolute;
+      top: 20%;
+      right: 10%;
+      width: 50%;
+      height: 50%;
+      padding: 10px;
+      /* border: 2px solid #3b3e41; */
+      background-color: white;
+      z-index: 9999;
+      overflow: auto;
+      border-radius: 25px;
+      box-shadow: darkgrey 0px 0px 30px 5px
+    }
+  </style>
 </html>
